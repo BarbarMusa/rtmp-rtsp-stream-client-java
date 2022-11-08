@@ -66,8 +66,8 @@ public class Camera1ApiManager implements Camera.PreviewCallback, Camera.FaceDet
   private Context context;
 
   //default parameters for camera
-  private int width = 640;
-  private int height = 480;
+  private int width = 1920;
+  private int height = 1080;
   private int fps = 30;
   private int rotation = 0;
   private int imageFormat = ImageFormat.NV21;
@@ -477,7 +477,7 @@ public class Camera1ApiManager implements Camera.PreviewCallback, Camera.FaceDet
     } else if (CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_720P)) {
       return camera.new Size(1280, 720);
     } else {
-      return camera.new Size(640, 480);
+      return camera.new Size(1920, 1080);
     }
   }
 

@@ -102,7 +102,7 @@ class StreamService: Service(), ConnectCheckerRtmp {
 
   fun prepare(): Boolean {
     if (!prepared) {
-      prepared = rtmpCamera?.prepareVideo(640, 480, 1200 * 1000) ?: false &&
+      prepared = rtmpCamera?.prepareVideo(1920, 1080, 1200 * 1000) ?: false &&
           rtmpCamera?.prepareAudio(44100, true, 128 * 1000) ?: false
     }
     return prepared
