@@ -211,7 +211,7 @@ public class TextureModeRtmpActivity extends AppCompatActivity
 
   @Override
   public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i1) {
-    textureView.setAspectRatio(1080, 1920);
+    textureView.setAspectRatio(1920, 1080);
   }
 
   @Override
