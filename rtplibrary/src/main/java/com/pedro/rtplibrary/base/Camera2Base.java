@@ -487,7 +487,8 @@ public abstract class Camera2Base implements GetAacData, GetVideoData, GetMicrop
         this.glInterface = glInterface;
         this.glInterface.init();
         this.glInterface.setEncoderSize(size.x, size.y);
-        this.glInterface.setRotation(videoEncoder.getRotation() == 0 ? 270 : videoEncoder.getRotation() - 90);
+//        this.glInterface.setRotation(videoEncoder.getRotation() == 0 ? 270 : videoEncoder.getRotation() - 90);
+        this.glInterface.setRotation(0);
         this.glInterface.start();
         if (isStreaming() || isRecording()) {
           this.glInterface.addMediaCodecSurface(videoEncoder.getInputSurface());
@@ -499,6 +500,7 @@ public abstract class Camera2Base implements GetAacData, GetVideoData, GetMicrop
         this.glInterface = glInterface;
         this.glInterface.init();
       }
+      Log.i(TAG, "replaceGlInterface: " + videoEncoder.getRotation());
     }
   }
 
@@ -539,7 +541,7 @@ public abstract class Camera2Base implements GetAacData, GetVideoData, GetMicrop
         } else {
           glInterface.setEncoderSize(width, height);
         }
-        glInterface.setRotation(rotation == 0 ? 270 : rotation - 90);
+        glInterface.setRotation(0);
         glInterface.setFps(videoEncoder.getFps());
         glInterface.start();
         cameraManager.prepareCamera(glInterface.getSurfaceTexture(), width, height,
