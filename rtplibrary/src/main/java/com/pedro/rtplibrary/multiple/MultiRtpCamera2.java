@@ -347,7 +347,7 @@ public class MultiRtpCamera2 extends Camera2Base {
         }
       }
     }
-    if (shouldStarEncoder) super.startStream("");
+    if (shouldStarEncoder) super.startStream(url);
     if (rtpType == RtpType.RTMP) {
       if (videoEncoder.getRotation() == 90 || videoEncoder.getRotation() == 270) {
         rtmpClients[index].setVideoResolution(videoEncoder.getHeight(), videoEncoder.getWidth());
